@@ -9,6 +9,7 @@ using namespace std;
 // If array has 0, use hash map solution. Keep adding and removing elements from array 
 // into hash map as u see them
 // Finally only unique would be left in the hashmap.
+// This version of solution is simple and has no space complexity as hashmap.
 int main()
 {
     int my_array[MAX_COUNT];
