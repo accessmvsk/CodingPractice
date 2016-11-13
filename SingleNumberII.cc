@@ -43,6 +43,10 @@ int main()
         ones &= ~threes;
         twos &= ~threes;
     }
-    
-   cout <<"The element appearing only once is: "<<ones<<endl;
+
+   if (ones) {
+        cout<<"The element appearing only once is: "<<ones<<endl;
+   } else {
+       cout<<"Couldn't find a unique element in the array "<<endl;
+   }
 }
