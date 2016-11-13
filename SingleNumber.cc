@@ -10,6 +10,9 @@ using namespace std;
 // into hash map as u see them
 // Finally only unique would be left in the hashmap.
 // This version of solution is simple and has no space complexity as hashmap.
+// See these :
+// http://www.programcreek.com/2012/12/leetcode-solution-of-single-number-in-java/
+// http://www.programcreek.com/2014/03/leetcode-single-number-ii-java/
 int main()
 {
     int my_array[MAX_COUNT];
