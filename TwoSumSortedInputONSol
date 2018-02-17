@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        // "result" vector holds the indices of reuslts. (not 0 based)
+        vector<int> result;
+        // start with two pointers left , right. use binary search to narrow the results
+        for (int left = 0, right = numbers.size()-1; left < right;)
+        {
+            int currentSum = numbers[left] + numbers[right];
+            if (currentSum == target) {
+                //found the correct set of values
+                result.push_back(left+1);
+                result.push_back(right+1);
+                //return the result
+                return result;
+            } else if (currentSum > target) {
+                //if currnet sum is larger than target, reduce it, by lowering the right value (moving left)
+                right--;
+            } else {
+                //if current sum is lesser than target, increase it, by bumping the left value (moving right)
+                left++;
+            }
+        }
+        // O(log(n) time O(1) space
+        //https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+    }
+};
