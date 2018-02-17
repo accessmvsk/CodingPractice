@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        //hash table to hold the elements
+        unordered_map<int, int> hashTable;
+        //indices of the numbers adding up to the target are stored in the "result" vector
+        vector<int> result;
+        for (int index=0; index<nums.size(); index++)
+        {
+            int differenceWithTarget = target - nums[index];
+            auto itr = hashTable.find(differenceWithTarget);
+            if (itr != hashTable.end()) {
+                result.push_back(index);
+                //retreive the index of the differenceWithTarget. which is stored in hashTable at differenceWithTarget index.
+                result.push_back(itr->second);
+                //we are done, return the result
+                return result;
+            } else {
+                //insert current index (which may go into result) at the index of current value (which we use to lookup (differenceWithTarget))
+                hashTable.insert(std::pair<int, int>(nums[index], index));
+            }
+        }
+    }
+    //O(n) time and O(n) space complexity
+    //https://leetcode.com/problems/two-sum/description/
+};
